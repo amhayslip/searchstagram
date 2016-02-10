@@ -11,7 +11,6 @@ var fetch = function () {
       appendPics(response);
     },
     error: function(jqXHR, textStatus, errorThrown) {
-      $('.searching').hide();
       console.log(textStatus);
     }
   }); 
@@ -19,7 +18,9 @@ var fetch = function () {
 
 var appendPics = function (response) {
   for (var i = 0; i < response.data.length; i += 1) {
-    $('.images').append('<img class="image" src="' + response.data[i].images.low_resolution.url + '"></img');
+    var url = response.data[i].images.low_resolution.url;
+    var image = '<img class="image" src="' + url + '"></img';
+    $('.images').append(image);
   }
 }
 
