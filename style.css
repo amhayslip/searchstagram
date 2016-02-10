@@ -1,3 +1,11 @@
+.search-container {
+  display: none;
+}
+
+.auth-container {
+  display: none;
+}
+
 .show {
   display: block;
 }
