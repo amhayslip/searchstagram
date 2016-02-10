@@ -7,4 +7,4 @@ gulp.task('connect', function () {
   })
 });
 
-gulp.task('default', ['connect']);t
+gulp.task('default', ['connect']);
