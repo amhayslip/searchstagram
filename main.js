@@ -1,4 +1,4 @@
-var client_id = null;
+var client_id = "de353841667d47e48108c135c29beb36";
 var redirect_uri = 'http://localhost:4000/';
 var authURL = 'https://instagram.com/oauth/authorize/?client_id=' + client_id + '&redirect_uri=' + redirect_uri + '&response_type=token';
 var access_token = null;
