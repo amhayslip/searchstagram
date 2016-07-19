@@ -1,19 +1,21 @@
-var client_id = "de353841667d47e48108c135c29beb36";
+var client_id = "a0012c23818d4a618d56bbf8ab2fc9a6";
 var redirect_uri = 'http://localhost:4000/';
-var authURL = 'https://instagram.com/oauth/authorize/?client_id=' + client_id + '&redirect_uri=' + redirect_uri + '&response_type=token';
+var authURL = 'https://instagram.com/oauth/authorize/?client_id=' + client_id + '&redirect_uri=' + redirect_uri + '&response_type=token&scope=public_content';
 var access_token = null;
 
-(function(){
-  if (window.location.hash) {
-    access_token = window.location.hash.split('=')[1];
-  }
+// https://api.instagram.com/oauth/authorize/?client_id=CLIENTID&redirect_uri=REDIRECT-URI&response_type=code&scope=SCOPE
 
-  if (!access_token) {
-    $('.auth-container').addClass('show');
-  } else {
-    $('.search-container').addClass('show');
-  }
-})();
+// (function(){
+if (window.location.hash) {
+  access_token = window.location.hash.split('=')[1];
+}
+
+if (!access_token) {
+  $('.auth-container').addClass('show');
+} else {
+  $('.search-container').addClass('show');
+}
+// })(); 
 
 var appendPics = function (data) {
   for (i = 0; i < data.data.length; i += 1) {
